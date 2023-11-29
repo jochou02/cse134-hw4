@@ -142,7 +142,7 @@
                         <input type="email" id="email" name="email" placeholder="johndoe@email.com" required>
                         <br>
                         <label for="comments">Comments:</label>
-                        <input id="comments" name="comments" placeholder="Glass is glass and glass breaks ..." required minlength="10" maxlength="50" pattern="[A-Za-z0-9.?! ]+"></input>
+                        <input id="comments" name="comments" placeholder="Glass is glass and glass breaks ..." required maxlength="50" pattern="[A-Za-z0-9.?! ]+"></input>
                         <br>
                         <output id="errorMessage"></output>
                         <output id="infoMessage"></output>
@@ -155,7 +155,6 @@
             <script>
                 const errorMessage = document.getElementById('errorMessage');
                 const comments = document.getElementById("comments");
-                const pattern = new RegExp(comments.getAttribute('pattern'));
 
                 function displayError() {
                     comments.classList.add('invalid-flash');
@@ -178,7 +177,7 @@
 
                 comments.addEventListener("input", (event) => {
                     const lastChar = comments.value.slice(-1);
-                    if (!pattern.test(lastChar)) {
+                    if (!comments.checkValidity()) {
                         // Call error function
                         displayError();
 
