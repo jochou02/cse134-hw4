@@ -163,8 +163,10 @@
             </section>
 
             <script>
+                const infoMessage = document.getElementById('infoMessage');
                 const errorMessage = document.getElementById('errorMessage');
                 const comments = document.getElementById("comments");
+                const maxCharacters = 50;
 
                 function displayError() {
                     comments.classList.add('invalid-flash');
@@ -185,7 +187,23 @@
                     }, 750);
                 }
 
+                function updateCharacterCount() {
+                    const remainingCharacters = maxCharacters - comments.value.length;
+                    infoMessage.textContent = `${remainingCharacters} characters remaining`;
+
+                    // Update styling based on remaining characters
+                    if (remainingCharacters <= 10 && remainingCharacters > 5) {
+                        infoMessage.className = 'info-warning';
+                    } else if (remainingCharacters <= 5) {
+                        infoMessage.className = 'info-error';
+                    } else {
+                        infoMessage.className = '';
+                    }
+                }
+
                 comments.addEventListener("input", (event) => {
+
+                    // Masking mechanism
                     const lastChar = comments.value.slice(-1);
                     if (!comments.checkValidity()) {
                         // Call error function
@@ -194,6 +212,9 @@
                         // Remove the invalid character
                         comments.value = comments.value.slice(0, -1);
                     }
+
+                    // Character count feature
+                    updateCharacterCount();
                 });  
             </script>
 
