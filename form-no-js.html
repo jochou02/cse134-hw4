@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>John's Portfolio Site</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="John Chou">
+        <meta name="description" content="John's Portfolio page">
+        <meta name="keywords" content="Computer Science, Portfolio, John Chou, Projects, Programming, Code, Software Engineering, Web Development, Machine Learning, Algorithms">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <header>
+            <h1>Hi, I'm John</h1>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#projects">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <hr>
+        </header>
+        
+        <main>
+
+            <section id="about">
+                <h2>About Me</h2>
+                <div class="flex-container">
+
+                    <article>
+                        <picture>
+                            <source media="(max-width: 700px)" srcset="pfp_300.jpg">
+                            <source media="(max-width: 1200px)" srcset="pfp_500.jpg">
+                            <img src="pfp_700.jpg" alt="John's profile picture">
+                        </picture>
+                        <p>Hi! I'm John Chou, a computer science student and aspiring software engineer.</p>
+                    </article>
+    
+                    <article>
+                        <h3>My Hobbies</h3>
+                        <ul>
+                            <li>Basketball</li>
+                            <li>Poker</li>
+                            <li>Gaming</li>
+                        </ul>
+                        <h3>My Favorite TV Shows</h3>
+                        <ol>
+                            <li>The Boys</li>
+                            <li>Suits</li>
+                            <li>The Office</li>
+                        </ol>
+                        <h3>FAQ</h3>
+                        <details>
+                            <summary>What is my favorite programming language?</summary>
+                            <p>Haskell</p>
+                        </details>
+                        <details>
+                            <summary>What is my favorite food?</summary>
+                            <p>Prime rib</p>
+                        </details>
+                    </article>
+
+                </div>
+            </section>
+
+            <hr>
+
+            <section>
+                <h2>Skills</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Language</th>
+                            <th>Proficiency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HTML</td>
+                            <td>8/10</td>
+                        </tr>
+                        <tr>
+                            <td>CSS</td>
+                            <td>6/10</td>
+                        </tr>
+                        <tr>
+                            <td>JavaScript</td>
+                            <td>9/10</td>
+                        </tr>
+                        <tr>
+                            <td>Python</td>
+                            <td>9/10</td>
+                        </tr>
+                        <tr>
+                            <td>Java</td>
+                            <td>8/10</td>
+                        </tr>
+                        <tr>
+                            <td>C++</td>
+                            <td>8/10</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>7/10</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <hr>
+
+            <section id="projects">
+                <h2>Projects</h2>
+                <div>
+                    <h3>Personal website</h3>
+                    <p>This website utilizes <code>HTML</code>, <code>CSS</code>, and <code>JavaScript</code>. It helped me learn how to properly write semantic HTML and how to use CSS.</p>
+                </div>
+                <div>
+                    <h3>Dijkstra's algorithm</h3>
+                    <p>Developed an efficient program in C++ that utilizes Dijkstra's shortest path algorithm to find the minimum distance between two nodes in a weighted graph. The implementation provides insights into optimal pathfinding and showcases the practical application of graph theory in computer science.</p>
+                </div>
+                <div>
+                    <h3>Huffman encoding tree</h3>
+                    <p> Implemented Huffman Encoding, a popular lossless data compression algorithm, using C++. This project constructs a binary tree representing character frequencies in a text and compresses it, enabling efficient storage and transmission. </p>
+                </div>
+                <div>
+                    <h3>Poker Equity Calculator</h3>
+                    <p>Developed a dynamic Poker Equity Calculator in Python that evaluates the winning probabilities of poker hands in various scenarios. Leveraging combinatorial analysis and Monte Carlo simulations, the tool provides real-time odds and equity percentages to aid players in decision-making during gameplay.</p>
+                </div>
+            </section>
+
+            <hr>
+            
+            <section id="contact">
+                <h2>Contact</h2>
+                <form action="https://httpbin.org/post" method="post">
+                    <fieldset>
+                        <legend>Contact Me!</legend>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        <br>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="johndoe@email.com" required>
+                        <br>
+                        <label for="comments">Comments:</label>
+                        <input id="comments" name="comments" placeholder="Glass is glass and glass breaks ..." required minlength="20" pattern="[A-Za-z0-9.?! ]+"></input>
+                        <br>
+                        <output id="errorMessage"></output>
+                        <output id="infoMessage"></output>
+                        <input type="hidden" name="possible_bot" value="true">
+                        <button type="submit">Send</button>
+                    </fieldset>
+                </form>
+            </section>
+
+            <hr>
+            
+        </main>
+        
+        <footer>
+            <!-- GIF Source: -->
+            <!-- https://64.media.tumblr.com/e241d522011270e73ca40f016070ec7c/cb718f4aaa540a16-d3/s640x960/a67c15c862678ade1bcdad4bf6de5f570b1193ce.gif -->
+            <picture>
+                <source media="(max-width: 700px)" srcset="homelander_100.gif">
+                <source media="(max-width: 1200px)" srcset="homelander_150.gif">
+                <img src="homelander_300.gif" alt="Homelander smiling">
+            </picture>
+            <p class="bouncing"><b>Thank you for visiting my website!</b></p>
+            <nav>
+                <a href="">Home</a>
+                <a href="https://www.linkedin.com/in/jochou02/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/jochou02" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </nav>
+        </footer>
+    </body>
+</html>

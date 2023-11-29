@@ -1,0 +1,393 @@
+/* Variables & font import */
+
+:root {
+    --background-color: color-mix(in srgb, rgb(29, 24, 39) 60%, rgb(0, 0, 0) 40%);
+    --heading1-color: rgb(195, 243, 255);
+    --heading2-color: rgb(195, 255, 216);
+    --heading3-color: rgb(196, 152, 191);
+    --text-color: rgb(181, 173, 255);
+    --link-color: rgb(243, 213, 180);
+    --link-hover-color: color(srgb 1 0.435 0.435);
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+}
+
+/* Animations */
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.bouncing {
+    animation: bounce 1.5s infinite;
+}
+
+/* Generic Styles */
+
+body {
+    background-color: var(--background-color, black);
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 1.25vw;
+    color: var(--text-color, white);
+}
+
+hr {
+    width: 65%;
+    margin: 3em auto;
+}
+
+/* Header styles */
+
+header h1 {
+    color: var(--heading1-color, white);
+    text-align: center;
+    font-size: 6vw;
+    margin-bottom: 0.15em;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav a {
+    margin: 0 25px;
+    color: var(--link-color, lightgreen);
+    font-size: 1.75vw;
+    text-decoration: none;
+    transition: color 0.25s, transform 0.25s;
+}
+
+header nav a:hover {
+    color: var(--link-hover-color, red);
+    transform: scale(1.1);
+}
+
+/* Main styles */
+
+h2 {
+    color: var(--heading2-color, white);
+    font-size: 2vw;
+    text-align: center;
+}
+
+h3 {
+    color: var(--heading3-color, white);
+}
+
+section {
+    width: 60%;
+    margin: 2em auto;
+}
+
+/* About Me Styles */
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3vw;
+}
+
+.flex-container article {
+    flex: 1;
+}
+
+.flex-container picture img {
+    display: block;
+    margin: auto;
+    max-width: 80%;
+    border-radius: 50%;
+}
+
+.flex-container p {
+    text-align: center;
+    color: rgb(128, 233, 239);
+}
+
+/* Skills Styles */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 5vh auto;
+    border: 1px solid white; 
+}
+
+td, th {
+    padding: 10px 15px;
+    text-align: left;
+    border: 1px solid white;  
+}
+
+thead th {
+    color: var(--heading3-color, white); 
+    font-weight: bold;
+    border-bottom: 3px solid white; 
+}
+
+tbody tr:hover {
+    background-color: rgb(105, 87, 139);
+}
+
+/* Projects Styles */
+
+#projects div {
+    margin-bottom: 4vh;
+}
+
+/* Contact Styles */
+
+form {
+    padding: 1.5rem;
+}
+
+legend {
+    font-size: 1.5vw;
+    margin-bottom: 1vh;
+    color: var(--heading3-color, white); 
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    border: 1px solid white;
+    border-radius: 3px;
+    font-size: 1.25vw;
+    transition: border-color 0.2s ease-in-out;
+}
+
+input:focus:invalid {
+    border: 2px solid red;
+}
+
+input:valid {
+    border: 2px solid green;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--text-color, white);
+    outline: none;
+}
+
+button {
+    display: block;
+    background-color: transparent;
+    color: var(--text-color, white);
+    padding: 0.75vw 2.5vw;
+    margin: 8px 0;
+    font-size: 0.75vw;
+    border: 1px solid var(--text-color, white);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: var(--link-hover-color, red);
+}
+
+/* Footer Styles */
+
+footer img {
+    display: block;
+    height: 15vw;
+    margin: 10vh auto 0 auto;
+}
+
+footer p:has(+ nav) {
+    color: var(--heading1-color, white);
+    text-align: center;
+}
+
+footer nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer nav a {
+    margin: 0 25px 40px 25px;
+    color: var(--link-color, lightgreen);
+    font-size: 1vw;
+    text-decoration: none;
+    transition: color 0.25s, transform 0.25s;
+}
+
+footer nav a:hover {
+    color: var(--link-hover-color, red);
+    transform: scale(1.1);
+}
+
+/* Media Queries */
+
+@media (max-width: 1200px) {
+
+    /* Generic Styles */
+
+    body {
+        font-size: 1.75vw;
+    }
+
+    hr {
+        width: 80%;
+        margin: 2em auto;
+    }
+
+    /* Header styles */
+
+    header h1 {
+        font-size: 7vw;
+    }
+
+    header nav a {
+        font-size: 2.5vw;
+    }
+
+    /* Main styles */
+
+    h2 {
+        font-size: 3vw;
+    }
+
+    section {
+        width: 75%;
+    }
+
+    /* About Me Styles */
+
+    /* Skills Styles */
+
+    /* Projects Styles */
+
+    #projects div {
+        margin-bottom: 5vh;
+    }
+
+    /* Contact Styles */
+
+    legend {
+        font-size: 3vw;
+    }
+
+    input, textarea {
+        font-size: 2vw;
+    }
+
+    button {
+        padding: 1vw 4vw;
+        font-size: 2vw;
+    }
+
+    /* Footer Styles */
+
+    footer img {
+        margin: 6vh auto 2vh auto;
+    }
+
+    footer nav a {
+        font-size: 2vw;
+    }
+}
+
+@media (max-width: 700px) {
+
+    /* Generic Styles */
+
+    body {
+        font-size: 2.6vw;
+    }
+
+    hr {
+        width: 95%;
+    }
+
+    /* Header styles */
+
+    header h1 {
+        font-size: 8vw;
+    }
+
+    header nav a {
+        font-size: 3.5vw;
+    }
+
+    /* Main styles */
+
+    h2 {
+        font-size: 5vw;
+    }
+
+    section {
+        width: 90%;
+    }
+
+    /* About Me Styles */
+
+    .flex-container {
+        flex-direction: column;
+    }
+
+    /* Skills Styles */
+
+    /* Projects Styles */
+
+    /* Contact Styles */
+
+    legend {
+        font-size: 4vw;
+    }
+
+    input, textarea {
+        font-size: 2.6vw;
+    }
+
+    button {
+        padding: 2vw 7vw;
+        font-size: 2.6vw;
+    }
+
+    /* Footer Styles */
+
+    footer nav a {
+        font-size: 2.5vw;
+    }
+}
+
+
+@keyframes flash {
+    0% { background-color: red; }
+    100% { background-color: white; }
+}
+
+.invalid-flash {
+    animation: flash 0.75s;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.fade-out {
+    animation: fadeOut 1.5s;
+}
