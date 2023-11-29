@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         footerPElement.classList.toggle('dark-theme', isLight);
         footerPElement.classList.toggle('light-theme', !isLight);
-        h2s.forEach(th => {
+        ths.forEach(th => {
             th.classList.toggle('dark-theme', isLight);
             th.classList.toggle('light-theme', !isLight);
         });
