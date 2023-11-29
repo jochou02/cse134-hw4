@@ -1,12 +1,17 @@
 /* Variables & font import */
 
 :root {
-    --background-color: color-mix(in srgb, rgb(29, 24, 39) 60%, rgb(0, 0, 0) 40%);
+    --background-color: rgb(29, 24, 39);
+    --background-color-light: rgb(242, 236, 255);
     --heading1-color: rgb(195, 243, 255);
+    --heading1-color-light: rgb(55, 122, 255);
     --heading2-color: rgb(195, 255, 216);
+    --heading2-color-light: rgb(0, 186, 65);
     --heading3-color: rgb(196, 152, 191);
-    --text-color: rgb(181, 173, 255);
-    --link-color: rgb(243, 213, 180);
+    --heading3-color-light: rgb(140, 58, 181);
+    --text-color: rgb(150, 139, 252);
+    --text-color-light: rgb(181, 173, 255);
+    --link-color: rgb(255, 174, 87);
     --link-hover-color: color(srgb 1 0.435 0.435);
 }
 
@@ -42,6 +47,10 @@ body {
     color: var(--text-color, white);
 }
 
+body.light-theme {
+    background-color: var(--background-color-light, white);
+}
+
 hr {
     width: 65%;
     margin: 3em auto;
@@ -54,6 +63,10 @@ header h1 {
     text-align: center;
     font-size: 6vw;
     margin-bottom: 0.15em;
+}
+
+header h1.light-theme {
+    color: var(--heading1-color-light, black);
 }
 
 header nav {
@@ -77,14 +90,35 @@ header nav a:hover {
 
 /* Main styles */
 
+#theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    color: var(--text-color, white);
+    padding: 0.75vw;
+    font-size: 0.75vw;
+    border: 1px solid var(--text-color, white);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
 h2 {
     color: var(--heading2-color, white);
     font-size: 2vw;
     text-align: center;
 }
 
+h2.light-theme {
+    color: var(--heading2-color-light, black);
+}
+
 h3 {
     color: var(--heading3-color, white);
+}
+
+h3.light-theme {
+    color: var(--heading3-color-light, black);
 }
 
 section {
@@ -114,7 +148,7 @@ section {
 
 .flex-container p {
     text-align: center;
-    color: rgb(128, 233, 239);
+    color: rgb(78, 184, 230);
 }
 
 /* Skills Styles */
@@ -136,6 +170,10 @@ thead th {
     color: var(--heading3-color, white); 
     font-weight: bold;
     border-bottom: 3px solid white; 
+}
+
+thead th.light-theme {
+    color: var(--heading3-color-light, white); 
 }
 
 tbody tr:hover {
@@ -189,7 +227,7 @@ input:focus, textarea:focus {
     outline: none;
 }
 
-button {
+form button {
     display: block;
     background-color: transparent;
     color: var(--text-color, white);
@@ -217,6 +255,10 @@ footer img {
 footer p:has(+ nav) {
     color: var(--heading1-color, white);
     text-align: center;
+}
+
+footer p:has(+ nav).light-theme {
+    color: var(--heading1-color-light, white);
 }
 
 footer nav {
@@ -264,6 +306,10 @@ footer nav a:hover {
     }
 
     /* Main styles */
+
+    #theme-toggle {
+        font-size: 1.5vw;
+    }
 
     h2 {
         font-size: 3vw;
@@ -332,6 +378,10 @@ footer nav a:hover {
     }
 
     /* Main styles */
+
+    #theme-toggle {
+        font-size: 2.5vw;
+    }
 
     h2 {
         font-size: 5vw;
